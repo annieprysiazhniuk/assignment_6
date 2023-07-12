@@ -1,0 +1,249 @@
+/* reset styles */
+@import url(reset.css);
+
+/* Import Fonts Inconsolata and Livvic from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Livvic:wght@100;400;500;600&family=Space+Mono&display=swap");
+
+/* --------------------- Global Styles --------------------- */
+:root {
+    --color-main: 2, 4, 8;
+    --color-bg: 87 88 103;
+    --color-error: 212, 45, 45;
+    --color-accent: 13 155 52;
+    --color-gray: 55 57 73;
+    --color-hover: 11 100 41;
+    --color-white: 255, 255, 255;
+    --color-shadow: 89, 201, 235;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    font: 400 1.25rem "Inconsolata", sans-serif;
+    color: rgb(var(--color-white));
+    background-color: rgb(var(--color-bg));
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font: 400 1.5rem "Livvic", sans-serif;
+}
+
+.accent {
+    color: rgb(var(--color-accent));
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+
+.accent:hover {
+    border-bottom: 2px solid rgb(var(--color-hover));
+}
+
+.section-title {
+    margin-bottom: 1.88rem;
+    font: bold 2rem "Livvic", sans-serif;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 1rem 1.88rem;
+    border: 1px solid rgb(var(--color-accent));
+    border-radius: 6px;
+    background: rgb(var(--color-accent));
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: rgb(var(--color-white));
+}
+
+.main-btn:hover {
+    box-shadow: inset 10rem 0 0 0 rgb(var(--color-hover));
+    border: 1px solid rgb(var(--color-hover));
+
+    transition: all 0.3s;
+}
+
+.hide {
+    display: none;
+}
+
+/* --------------------- Header --------------------- */
+.site-header {
+    padding: 10px 0;
+    background: rgb(var(--color-bg));
+    box-shadow: 0 -4px 25px rgb(var(--color-shadow));
+}
+
+.logo {
+    color: rgb(var(--color-white));
+    transition: all 0.3s;
+    font-family: 'Livvic', sans-serif;
+}
+
+.logo:hover {
+    color: rgb(var(--color-accent));
+    transition: all 0.3s;
+}
+
+.navbar-toggler {
+    width: auto;
+    border-color: rgb(var(--color-white));
+    margin-right: 15px;
+}
+
+.main-nav-list {
+    display: flex;
+}
+
+.main-nav-list a {
+    color: rgb(var(--color-white));
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 991px) {
+    .main-nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav-list li a {
+        display: inline-block;
+        padding: 1.88rem;
+    }
+
+    .main-nav-list .current-menu-item a,
+    .main-nav-list a:hover {
+        color: rgb(var(--color-accent));
+        transition: all 0.3s;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .site-header {
+        padding: 1.4rem 0;
+    }
+
+    .main-nav-list li {
+        margin-right: 3.8rem;
+    }
+
+    .main-nav-list li:last-child {
+        margin-right: 0;
+    }
+
+    .main-nav-list a {
+        padding-top: 1.6rem;
+        border-top: 7px solid transparent;
+    }
+
+    .main-nav-list .current-menu-item a,
+    .main-nav-list a:hover {
+        transition: all 0.3s;
+    }
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+/* --------------------- Home page --------------------- */
+.welcome-container {
+    margin: 100px 0;
+    text-align: center;
+    background: rgb(var(--color-gray));
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.welcome-container h1 {
+    margin-bottom: 1.88rem;
+    font: bold 2rem "Livvic", sans-serif;
+}
+
+.welcome-container p {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+
+/* --------------------- Form --------------------- */
+.form-container {
+    margin: 50px 0;
+    background: rgb(var(--color-gray));
+    color: rgb(var(--color-white));
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+.datepicker-container {
+    position: relative;
+}
+
+.datepicker-container .input-group-append {
+    position: absolute;
+    right: 0;
+}
+
+p.error {
+    color: rgb(var(--color-error));
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.error>input {
+    border-color: rgb(var(--color-error));
+}
+
+span.input-group-text {
+    height: 38px;
+}
+
+
+
+/* --------------------- Quote Page --------------------- */
+.quote-container {
+    margin: 100px auto;
+    text-align: center;
+}
+
+.quote-container h1 {
+    margin-bottom: 1.88rem;
+    font: bold 2rem "Livvic", sans-serif;
+}
+
+.quote-item {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.quote-author {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
